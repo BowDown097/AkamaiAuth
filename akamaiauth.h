@@ -23,7 +23,6 @@ char* generateGDAToken(const char* pathname, long exp, unsigned char* salt, cons
     // create a combination of expBytes and data
     size_t buffer1sz = sizeof(int) + datalen;
     unsigned char buffer1[buffer1sz];
-    memset(buffer1, 0, buffer1sz);
     memcpy(buffer1, expBytes, sizeof(int));
     memcpy(&buffer1[sizeof(int)], data, datalen);
 
@@ -37,7 +36,6 @@ char* generateGDAToken(const char* pathname, long exp, unsigned char* salt, cons
     // create a combination of salt and MD5 digest
     size_t binaryStringsz = saltlen + MD5_DIGEST_LENGTH;
     unsigned char binaryString[binaryStringsz];
-    memset(binaryString, 0, binaryStringsz);
     memcpy(binaryString, salt, binaryStringsz);
     memcpy(&binaryString[saltlen], digest1, MD5_DIGEST_LENGTH);
 
