@@ -18,10 +18,10 @@ int main()
     #ifdef USECURRTIME
         long exp = time(0) + 14400;
         printf("Using current time for expiration ~ time %ld (Unix time + 14400)\n", exp);
-        printf("%s\n", generateGDAToken(PATHNAME, exp, "", ""));
+        puts(generateGDAToken(PATHNAME, exp, "", ""));
     #else
         printf("NOT using current time for expiration ~ time 14400\n");
-        printf("%s\n", generateGDAToken(PATHNAME, 14400, "", ""));
+        puts(generateGDAToken(PATHNAME, 14400, "", ""));
     #endif
 
     #ifdef MEASUREEXECTIME
